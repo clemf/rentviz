@@ -8,7 +8,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'rest_client'
-gem 'dotenv-rails'
 gem 'bootstrap-sass'
 
 group :development, :test do
@@ -19,6 +18,8 @@ group :development, :test do
   gem 'capybara'
   gem 'vcr'
   gem 'webmock'
+  gem 'dotenv-rails'
+  gem 'shoulda-matchers'
 end
 
 group :production do
