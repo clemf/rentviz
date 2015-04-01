@@ -6,7 +6,7 @@ class RentalsController < ApplicationController
 
   def new
     @rental = Rental.new
-  def
+  end
 
 
 end

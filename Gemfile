@@ -20,6 +20,7 @@ group :development, :test do
   gem 'webmock'
   gem 'dotenv-rails'
   gem 'shoulda-matchers'
+  gem 'pry'
 end
 
 group :production do
