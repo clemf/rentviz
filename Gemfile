@@ -16,8 +16,8 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails'
   gem 'capybara'
-  # gem 'vcr'
-  # gem 'webmock'
+  gem 'vcr'
+  gem 'webmock'
   gem 'dotenv-rails'
   gem 'shoulda-matchers'
 end
