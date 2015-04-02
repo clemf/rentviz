@@ -3,13 +3,14 @@
 <h1>Rentals</h1>
 
   <% @rentals.each do |rental| %>
-    <div class="well">
-      <h2><%= rental.heading %></h2>
-      <p>
-        Price: <%= rental.price %>
-      </p>
-      <p>
-        <%= rental.body %>
-      </p>
+    <div class="panel-primary">
+      <div class="panel-heading"><%= rental.heading %></div>
+      <ul class="list-group">
+        <li class="list-group-item">Price: <%= rental.price %></li>
+        <li class="list-group-item">Time: <%= rental.timestamp %></li>
+        <li class="list-group-item"><div class="well well-sm"><%= rental.body %></div></li>
+      </ul>
     </div>
   <% end %>
+
+<%= paginate @rentals %>
