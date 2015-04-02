@@ -199,7 +199,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass
+  bootstrap-sass (~> 3.3.4)
   byebug
   capybara
   coffee-rails (~> 4.1.0)
@@ -211,7 +211,7 @@ DEPENDENCIES
   rails_12factor
   rest-client
   rspec-rails
-  sass-rails (~> 5.0)
+  sass-rails (>= 3.2)
   shoulda-matchers
   spring
   turbolinks
