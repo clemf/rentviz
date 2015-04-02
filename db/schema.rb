@@ -11,22 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401165425) do
+ActiveRecord::Schema.define(version: 20150402192945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "rentals", force: :cascade do |t|
-    t.integer "threetaps_id"
-    t.string  "source"
-    t.string  "category"
-    t.string  "location"
-    t.integer "external_id"
-    t.string  "external_url"
-    t.string  "heading"
-    t.string  "timestamp"
-    t.string  "body"
-    t.float   "price"
+    t.string "threetaps_id"
+    t.string "source"
+    t.string "category"
+    t.string "location"
+    t.string "external_id"
+    t.string "external_url"
+    t.string "heading"
+    t.string "timestamp"
+    t.string "body"
+    t.string "price"
   end
 
 end

@@ -1,3 +1,15 @@
 <% content_for(:title, "RentViz") %>
 
 <h1>Rentals</h1>
+
+  <% @rentals.each do |rental| %>
+    <div class="well">
+      <h2><%= rental.heading %></h2>
+      <p>
+        Price: <%= rental.price %>
+      </p>
+      <p>
+        <%= rental.body %>
+      </p>
+    </div>
+  <% end %>
