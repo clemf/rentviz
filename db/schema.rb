@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402192945) do
+ActiveRecord::Schema.define(version: 20150416181825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,13 +20,16 @@ ActiveRecord::Schema.define(version: 20150402192945) do
     t.string "threetaps_id"
     t.string "source"
     t.string "category"
-    t.string "location"
     t.string "external_id"
     t.string "external_url"
     t.string "heading"
     t.string "timestamp"
     t.string "body"
     t.string "price"
+    t.string "formatted_address"
+    t.string "zip_code"
+    t.string "lat"
+    t.string "long"
   end
 
 end
