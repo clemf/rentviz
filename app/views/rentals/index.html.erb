@@ -3,8 +3,8 @@
 <h1>Rentals</h1>
 
   <% @rentals.each do |rental| %>
-    <div class="panel-primary">
-      <div class="panel-heading"><%= rental.heading %></div>
+    <div class="panel panel-default">
+      <div class="panel-heading"><a href="<%= rental.external_url %>"><%= rental.heading %></a></div>
       <ul class="list-group">
         <li class="list-group-item">Price: <%= rental.price %></li>
         <li class="list-group-item">Time: <%= Time.at(rental.timestamp.to_i).strftime("%A, %d %b %Y %l:%M %p") %></li>
