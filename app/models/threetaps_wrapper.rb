@@ -4,20 +4,17 @@ class ThreetapsWrapper
     response = RestClient.get "http://search.3taps.com",
       { params: params }
     parsed_response = JSON.parse response
-    # response.force_encoding("utf-8")
 
     puts "Number of matches: #{parsed_response['num_matches']}"
     puts "Page: #{parsed_response['next_page']}"
-    # puts "Press spacebar to continue"
-    # sleep 1 while $stdin.getch != " "
 
-    # File.open("threetaps", "w") { |f| f.write(response) }
     parsed_response["postings"].each do |post|
       Rental.create(threetaps_id: post["id"],
                     source: post["source"],
                     category: post["category"],
                     location: post["location"],
                     external_id: post["external_id"],
+                    external_url: post["external_url"],
                     heading: post["heading"],
                     timestamp: post["timestamp"],
                     body: post["body"],
