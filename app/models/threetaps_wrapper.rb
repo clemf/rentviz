@@ -9,29 +9,32 @@ class ThreetapsWrapper
     puts "Page: #{parsed_response['next_page']}"
 
     parsed_response["postings"].each do |post|
-      Rental.create(threetaps_id: post["id"],
-                    source: post["source"],
-                    category: post["category"],
-                    formatted_address: post["location"]["formatted_address"],
-                    zip_code: post["location"]["zipcode"],
-                    lat: post["location"]["lat"],
-                    long: post["location"]["long"],
-                    external_id: post["external_id"],
-                    external_url: post["external_url"],
-                    heading: post["heading"],
-                    timestamp: post["timestamp"],
-                    body: post["body"],
-                    price: post["price"])
+      if Rental.find_by threetaps_id: post["id"]
+        break
+      else
+        Rental.create(threetaps_id: post["id"],
+                      source: post["source"],
+                      category: post["category"],
+                      formatted_address: post["location"]["formatted_address"],
+                      zip_code: post["location"]["zipcode"],
+                      lat: post["location"]["lat"],
+                      long: post["location"]["long"],
+                      external_id: post["external_id"],
+                      external_url: post["external_url"],
+                      heading: post["heading"],
+                      timestamp: post["timestamp"],
+                      body: post["body"],
+                      price: post["price"])
+      end
     end
 
-
-    page = parsed_response["next_page"]
-    if page != -1
-      anchor = parsed_response["anchor"]
-      tier = parsed_response["next_tier"]
-      new_params = params.merge({ page: page, tier: tier, anchor: anchor })
-      self.search(new_params)
-    end
+    # page = parsed_response["next_page"]
+    # if page != -1
+    #   anchor = parsed_response["anchor"]
+    #   tier = parsed_response["next_tier"]
+    #   new_params = params.merge({ page: page, tier: tier, anchor: anchor })
+    #   self.search(new_params)
+    # end
   end
 
   def self.apartments
