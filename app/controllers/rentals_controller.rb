@@ -1,7 +1,7 @@
 class RentalsController < ApplicationController
 
   def index
-    @rentals = Rental.order(:timestamp).page params[:page]
+    @rentals = Rental.order("timestamp DESC").page params[:page]
   end
 
   def new

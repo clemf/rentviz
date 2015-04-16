@@ -13,7 +13,7 @@ class ThreetapsWrapper
                     source: post["source"],
                     category: post["category"],
                     formatted_address: post["location"]["formatted_address"],
-                    zip_code: post["location"]["zip_code"],
+                    zip_code: post["location"]["zipcode"],
                     lat: post["location"]["lat"],
                     long: post["location"]["long"],
                     external_id: post["external_id"],

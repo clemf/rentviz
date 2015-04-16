@@ -8,6 +8,8 @@
       <ul class="list-group">
         <li class="list-group-item">Price: <%= rental.price %></li>
         <li class="list-group-item">Time: <%= rental.timestamp %></li>
+        <li class="list-group-item">Address: <%= rental.formatted_address %></li>
+        <li class="list-group-item">Zip: <%= rental.zip_code %></li>
         <li class="list-group-item"><div class="well well-sm"><%= rental.body %></div></li>
       </ul>
     </div>
